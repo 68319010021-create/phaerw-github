@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>รายงานสภาพอากาศแบบเรียลไทม์</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .inputs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+    input {
+      width: 50%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover { background-color: #0056b3; }
+    .weather-info { margin-top: 1.5rem; }
+    .temp { font-size: 2.5rem; font-weight: bold; color: #333; }
+    .error { color: red; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>🌤️ รายงานสภาพอากาศ</h2>
+    
+    <div class="inputs">
+      <input type="number" id="lat" placeholder="Latitude (เช่น 13.75)" step="any" value="13.7563">
+      <input type="number" id="lon" placeholder="Longitude (เช่น 100.50)" step="any" value="100.5018">
+    </div>
+    
+    <button onclick="getWeather()">ดึงข้อมูลสภาพอากาศ</button>
+
+    <div id="result" class="weather-info">
+      <p>กรอกพิกัดแล้วกดปุ่มเพื่อดูข้อมูล</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
